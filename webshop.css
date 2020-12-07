@@ -1,0 +1,31 @@
+body{
+    padding-top: 50px;
+}
+
+#navbar{
+    background-color: #800000;
+}
+
+#text{
+    background-color: black;
+    color: #ffffff;
+}
+
+#background-image{
+    position: relative;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    height: 600px;
+    background-image: url("images/bg.jpg");
+    background-repeat:no-repeat;
+    background-size: 100% 700px;
+    background-position: top center;
+    background-attachment: fixed;
+    
+}
+
+.images{
+    width: auto;
+    height: 200px;
+}
