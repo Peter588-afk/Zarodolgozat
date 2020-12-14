@@ -1,5 +1,5 @@
 <?php
-$sql="SELECT * from products where kategId=1";
+$sql="SELECT * from products where kategId=3";
 include "szures.php";
 //print_r($_POST);
 include "megjelenit.php";

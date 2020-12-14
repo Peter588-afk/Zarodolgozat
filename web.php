@@ -1,59 +1,5 @@
 <?php
 session_start();
-require_once "config.php";
-
-//Kulcs ellenőrzés
-if(!isset($_SESSION['kulcs'])){
-    header("Location:index.php");
-}
-
-$foto=$_SESSION['foto']!=null ? $_SESSION['foto'] : "avatar/avatar.png";
-$fnev=$_SESSION['kulcs'];
-
-//logout
-if(isset($_POST['logout'])){
-    session_destroy();
-    $_SESSION['kulcs']="";
-    header("Location:index.php");
-}
-
-require_once "config2.php";
-
-$sql="SELECT * FROM termekek";
-$stmt=$db->query($sql);
-$strTable="";
-$strKosar="";
-while($row=$stmt->fetch()){
-  //print_r($row);
-  //echo "<br>";
-  $strTable.="<div class='col-md-4'><h4>{$row['nev']}</h4></p><img src='{$row['foto']}' class='images'><p class='price text-success'>{$row['ar']}<br><button class='btn btn-success' name='gomb' value='{$row['id']}'>Kosárba</button></div>";
-}
-//print_r($_POST);
-if(isset($_POST['gomb'])){
-  $id=$_POST['gomb'];
-  $kosarId=session_id();
-  $sql="INSERT INTO kosar values('{$kosarId}', {$id}, 1)";
-  //echo $sql;
-  $stmt=$db->exec($sql);
-  if($stmt){
-    $sql="SELECT a.id, a.nev, a.ar, sum(b.darab) darab from termekek a, kosar b WHERE a.id=b.idTermek GROUP BY b.idTermek";
-    $stmt=$db->query($sql);
-    while($row=$stmt->fetch()){
-      $strKosar.="<tr><td>{$row['nev']}</td><td>{$row['ar']}</td><td>{$row['darab']}</td>";
-      $strKosar.="<td><a href='edit.php'>EDIT</a></td><td><a href='delete.php?id={$row['id']}'>DELETE</a></td></tr>";
-    }
-  }
-}
-//torles utan frissites
-if(isset($_SESSION['msg'])){
-  $strKosar="";
-  $sql="SELECT a.id, a.nev, a.ar, sum(b.darab) darab from termekek a, kosar b WHERE a.id=b.idTermek GROUP BY b.idTermek";
-    $stmt=$db->query($sql);
-    while($row=$stmt->fetch()){
-      $strKosar.="<tr><td>{$row['nev']}</td><td>{$row['ar']}</td><td>{$row['darab']}</td>";
-      $strKosar.="<td><a href='edit.php'>EDIT</a></td><td><a href='delete.php?id={$row['id']}'>DELETE</a></td></tr>";
-    }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,10 +14,10 @@ if(isset($_SESSION['msg'])){
     <link rel="stylesheet" href="webshop.css">
 </head>
 <body>
-<div >
+<div>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-end fixed-top">
 
-    <a class="navbar-brand" href="#">Webshop</a>
+    <a class="navbar-brand" href="web.php">Webshop</a>
 
     <ul class="nav navbar-nav text-left">
     
@@ -80,13 +26,13 @@ if(isset($_SESSION['msg'])){
     <span class="caret"></span></button>
     <ul class="dropdown-menu bg-secondary">
       <li>
-            <a href="cipo.php" id="kosar" class="text-white">Kosárlabda cipők</a>
+            <a href="web.php?p=kosarCipo.php" id="kosar" class="text-white">Kosárlabda cipők</a>
         </li>
         <li>
-            <a href="utcai.php" id="utcai" class="text-white">Utcai cipők</a>
+            <a href="web.php?p=utcai.php" id="utcai" class="text-white">Utcai cipők</a>
         </li>
         <li>
-            <a href="papucs.php" id="papucs" class="text-white">Papucsok</a>
+            <a href="web.php?p=papucs.php" id="papucs" class="text-white">Papucsok</a>
         </li>
     </ul>
 </div>
@@ -96,13 +42,13 @@ if(isset($_SESSION['msg'])){
     <span class="caret"></span></button>
     <ul class="dropdown-menu bg-secondary">
       <li>
-            <a href="polo.php" id="polo" class="text-white">Pólók</a>
+            <a href="web.php?p=polo.php" id="polo" class="text-white">Pólók</a>
         </li>
         <li>
-            <a href="pulcsi.php" id="pulover" class="text-white">Pulóverek</a>
+            <a href="web.php?p=pulcsi.php" id="pulover" class="text-white">Pulóverek</a>
         </li>
         <li>
-            <a href="nadrag.php" id="nadrag" class="text-white">Nadrágok</a>
+            <a href="web.php?p=nadrag.php" id="nadrag" class="text-white">Nadrágok</a>
         </li>
     </ul>
 </div>
@@ -112,13 +58,13 @@ if(isset($_SESSION['msg'])){
     <span class="caret"></span></button>
     <ul class="dropdown-menu bg-secondary">
     <li>
-            <a href="sapka.php" id="sapka" class="text-white">Sapkák</a>
+            <a href="web.php?p=sapka.php" id="sapka" class="text-white">Sapkák</a>
         </li>
         <li>
-            <a href="taska.php" id="taska" class="text-white">táskák</a>
+            <a href="web.php?p=taska.php" id="taska" class="text-white">táskák</a>
         </li>
         <li>
-            <a href="labda.php"  id="labda" class="text-white">labdák</a>
+            <a href="web.php?p=labda.php"  id="labda" class="text-white">labdák</a>
         </li>
     </ul>
 </div>
@@ -145,43 +91,22 @@ if(isset($_SESSION['msg'])){
         </ul>
     </div>
 </nav>
+
 </div>
     <div class="container">
       <div id="background-image">
       </div>
-  
-  <!--termékek-->
-  
-  <hr>
-  <form method="post">
-  <div class="container border p-3">
-      <h2 class="text-center">Egy kis ízelítő a termékekből</h2>
-        <div class="row shadow p-1 bg-light">
-          <div class="col-md-12">
-             <div class="table-responsive">
-                  <div class="row" id="sor">
-                    <?=$strTable?>
-                  </div>
-            </div>
-          </div>
-        </div>
-  </form>
-    <div class="container border p-3">
-      <h2 class="text-center">Kosárba rakott termékek</h2>
-        <div class="row shadow p-1 bg-light">
-          <div class="col-md-12">
-             <div class="table-responsive">
-              <table class="table table-hover table-fixed-border table-striped" >
-                  <thead><tr><th scope="col">Termék neve</th><th scope="col">Ára</th></tr></thead>
-                  <tbody id="tablazat"><?=$strKosar?></tbody>
-                  
-             </table>
-            </div>
-          </div>
-        </div>
-  
-  </div>
-        
     </div>
+
+<?php
+//print_r ($_GET);
+    if(isset($_GET['p'])){
+        include $_GET['p'];
+    }else{
+        include "home.php";
+    }
+?>
+</div>
+
 </body>
 </html>
