@@ -1,5 +1,22 @@
 <?php
 session_start();
+
+require_once "config.php";
+
+//Kulcs ellenőrzés
+if(!isset($_SESSION['kulcs'])){
+    header("Location:index.php");
+}
+
+$foto=$_SESSION['avatar']!=null ? $_SESSION['avatar'] : "avatar/avatar.png";
+$fnev=$_SESSION['kulcs'];
+
+//logout
+if(isset($_POST['logout'])){
+    session_destroy();
+    $_SESSION['kulcs']="";
+    header("Location:index.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

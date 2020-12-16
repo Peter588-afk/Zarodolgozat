@@ -1,7 +1,7 @@
 <?php
 session_start();
 print_r(session_id());
-require_once "config2.php";
+require_once "config.php";
 print_r($_GET);
 $id=$_GET['id'];
 $sql="delete from kosar where idTermek={$id}";
