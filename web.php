@@ -27,8 +27,17 @@ if(isset($_POST['logout'])){
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <script src="bootstrap/jquery.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
+    <script src="bootstrap/popper.min.js"></script>
     <script src="webshop.js"></script>
     <link rel="stylesheet" href="webshop.css">
+
+    <style>
+  /* Make the image fully responsive */
+  .carousel-inne img {
+    width: 100%;
+    height: 100%;
+  }
+  </style>
 </head>
 <body>
 <div>
