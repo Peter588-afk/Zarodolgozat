@@ -4,9 +4,14 @@ require_once "config.php";
 $sql="SELECT a.id,a.leiras as leiras ,b.picture FROM kategoria as a, products as b WHERE a.id=b.kategId AND b.picture=CONCAT('images/',leiras,'1.jpg')";
 $stmt=$db->query($sql);
 $strCarousel="";
+$i=0;
 while($row=$stmt->fetch()){
   extract($row);
-  $strCarousel.="<div class='carousel-item active'> <img src='{$picture}' alt='{$picture}' width='1100' height='500'> </div>";
+    $i++;
+    if($i==1){
+          $strCarousel.="<div class='carousel-item active'> <a href='web.php?id={$id}'> <img src='{$picture}' alt='{$picture}' width='600'></a> </div>";
+    }else $strCarousel.="<div class='carousel-item'> <a href='web.php?id={$id}'>  <img src='{$picture}' alt='{$picture}' width='600'> </a> </div>";
+
 }
 
 ?>

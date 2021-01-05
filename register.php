@@ -10,6 +10,7 @@ if(isset($_POST['mentes'])){
     $email=$_POST['email'];
     $jelszo=$_POST['password'];
     $telefon=$_POST['phone'];
+    $address=$_POST['address'];
 
    /* $sql="SELECT email,username from users where email='{$email}' or username='{$fnev}'";
 
@@ -26,7 +27,7 @@ if(isset($_POST['mentes'])){
         echo "<br>";
         echo $msgFoto;
         if($msgFoto==""){
-        $sql="INSERT INTO customers values(null, '{$fnev}', '{$email}', '{$pw}', '{$telefon}' ,'{$newName}')";
+        $sql="INSERT INTO customers values(null, '{$fnev}', '{$email}', '{$pw}', '{$telefon}' ,'{$newName}', '{$address}')";
 
         echo $sql;
 
@@ -65,6 +66,7 @@ if(isset($_POST['mentes'])){
             <input type="password" name="password" id="pw1" placeholder="Jelszó" required>
             <input type="password" name="pwConf" id="pw2" placeholder="Jelszó megerősítése" required>
             <input type="text" name="phone" id="phone" placeholder="Telefonszáma" required>
+            <input type="text" name="address" id="address" placeholder="Címe" required>
             <input type="file" name="avatar">
             <input type="checkbox" name="" id="" required> <a href="#">Adatkezelési feltételek...</a>
             <input type="submit" class="btn btn-success btn-block" name="mentes" id="btn" value="Regisztráció">

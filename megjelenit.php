@@ -1,6 +1,6 @@
 <form method="post">
   <div class="container border p-3">
-      <h2 class="text-center">Egy kis ízelítő a termékekből</h2>
+      <h2 class="text-center">Termékek</h2>
         <div class="row shadow p-1 bg-light">
           <div class="col-md-12">
              <div class="table-responsive">

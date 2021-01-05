@@ -5,7 +5,8 @@ require_once "config.php";
 
 //Kulcs ellenőrzés
 if(!isset($_SESSION['kulcs'])){
-    header("Location:index.php");
+    //header("Location:index.php");
+    echo "Nincs kulcs";
 }
 
 $foto=$_SESSION['avatar']!=null ? $_SESSION['avatar'] : "avatar/avatar.png";
@@ -33,9 +34,9 @@ if(isset($_POST['logout'])){
 
     <style>
   /* Make the image fully responsive */
-  .carousel-inne img {
-    width: 100%;
-    height: 100%;
+  .carousel-inner img {
+    width: 80%;
+    height: 80%;
   }
   </style>
 </head>
@@ -52,13 +53,13 @@ if(isset($_POST['logout'])){
     <span class="caret"></span></button>
     <ul class="dropdown-menu bg-secondary">
       <li>
-            <a href="web.php?p=kosarCipo.php" id="kosar" class="text-white">Kosárlabda cipők</a>
+            <a href="web.php?id=2" id="kosar" class="text-white">Kosárlabda cipők</a>
         </li>
         <li>
-            <a href="web.php?p=utcai.php" id="utcai" class="text-white">Utcai cipők</a>
+            <a href="web.php?id=1" id="utcai" class="text-white">Utcai cipők</a>
         </li>
         <li>
-            <a href="web.php?p=papucs.php" id="papucs" class="text-white">Papucsok</a>
+            <a href="web.php?id=3" id="papucs" class="text-white">Papucsok</a>
         </li>
     </ul>
 </div>
@@ -68,13 +69,13 @@ if(isset($_POST['logout'])){
     <span class="caret"></span></button>
     <ul class="dropdown-menu bg-secondary">
       <li>
-            <a href="web.php?p=polo.php" id="polo" class="text-white">Pólók</a>
+            <a href="web.php?id=4" id="polo" class="text-white">Pólók</a>
         </li>
         <li>
-            <a href="web.php?p=pulcsi.php" id="pulover" class="text-white">Pulóverek</a>
+            <a href="web.php?id=5" id="pulover" class="text-white">Pulóverek</a>
         </li>
         <li>
-            <a href="web.php?p=nadrag.php" id="nadrag" class="text-white">Nadrágok</a>
+            <a href="web.php?id=6" id="nadrag" class="text-white">Nadrágok</a>
         </li>
     </ul>
 </div>
@@ -84,13 +85,13 @@ if(isset($_POST['logout'])){
     <span class="caret"></span></button>
     <ul class="dropdown-menu bg-secondary">
     <li>
-            <a href="web.php?p=sapka.php" id="sapka" class="text-white">Sapkák</a>
+            <a href="web.php?id=7" id="sapka" class="text-white">Sapkák</a>
         </li>
         <li>
-            <a href="web.php?p=taska.php" id="taska" class="text-white">táskák</a>
+            <a href="web.php?id=8" id="taska" class="text-white">táskák</a>
         </li>
         <li>
-            <a href="web.php?p=labda.php"  id="labda" class="text-white">labdák</a>
+            <a href="web.php?id=9"  id="labda" class="text-white">labdák</a>
         </li>
     </ul>
 </div>
@@ -126,8 +127,9 @@ if(isset($_POST['logout'])){
 
 <?php
 //print_r ($_GET);
-    if(isset($_GET['p'])){
-        include $_GET['p'];
+    if(isset($_GET['id'])){
+        //include $_GET['id'];
+        include "szures.php";
     }else{
         include "home.php";
     }

@@ -6,13 +6,14 @@ if(isset($_POST['login'])){
     $fnev=$_POST['name'];
     $pw=$_POST['password'];
 
-    $sql="SELECT password,avatar from customers where name='{$fnev}'";
+    $sql="SELECT password,avatar,id from customers where name='{$fnev}'";
     $stmt=$db->query($sql);
     if($stmt->rowCount()>0){
         $row=$stmt->fetch();
-        print_r($row);
+        print_r($_SESSION);
         if(password_verify($pw,$row['password'])){
-            $_SESSION['kulcs']=$fnev;
+            $_SESSION['kulcs']=$row['id'];
+            $_SESSION['fnev']=$fnev;
             $_SESSION['avatar']=$row['avatar'];
             header("Location:web.php");
         }else $msg="Helytelen jelszó vagy felhasználónév";
