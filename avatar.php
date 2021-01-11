@@ -1,5 +1,5 @@
 <?php
-
+/*
 print_r($_FILES);
 if(array_key_exists("avatar", $_FILES)){
     if($_FILES['avatar']['size']>2000000){
@@ -24,5 +24,5 @@ if(array_key_exists("avatar", $_FILES)){
 }else{
     $msgFoto="Foto feltöltes nem sikerult";
 }
-
+*/
 ?>

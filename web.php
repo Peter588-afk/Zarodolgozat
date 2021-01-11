@@ -30,101 +30,117 @@ if(isset($_POST['logout'])){
     <script src="bootstrap/bootstrap.min.js"></script>
     <script src="bootstrap/popper.min.js"></script>
     <script src="webshop.js"></script>
-    <link rel="stylesheet" href="webshop.css">
+    <link rel="stylesheet" href="style2.css">
 
     <style>
   /* Make the image fully responsive */
   .carousel-inner img {
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
+  }
+  ul.carousel-indicators{
+        background: black;
+  }
+    ul.carousel-indicators li.active {
+        background: yellow;
+  }
+  .carousel-control-prev {
+    background: black;
+  }
+  .carousel-control-next{
+    background: black;
   }
   </style>
 </head>
 <body>
-<div>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-end fixed-top">
 
-    <a class="navbar-brand" href="web.php">Webshop</a>
+<header>
+    <div class="myNavBar">
+        <div class="container">
+            <input type="checkbox" name="" id="check">
+            
+            <div class="logo-container">
+            <a href="web.php"><h3 class="logo">Web<span>Shop</span></h3>
+            </div>
 
-    <ul class="nav navbar-nav text-left">
-    
-    <div class="dropdown nav-item">
-    <button class="btn btn-danger btn-lg dropdown-toggle" type="button" data-toggle="dropdown">Cipők
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu bg-secondary">
-      <li>
-            <a href="web.php?id=2" id="kosar" class="text-white">Kosárlabda cipők</a>
-        </li>
-        <li>
-            <a href="web.php?id=1" id="utcai" class="text-white">Utcai cipők</a>
-        </li>
-        <li>
-            <a href="web.php?id=3" id="papucs" class="text-white">Papucsok</a>
-        </li>
-    </ul>
-</div>
+            <div class="nav-btn">
+                <div class="nav-links">
+                    <ul>
+                        <li class="nav-link" style="--i: .85s">
+                            <a href="#">Cipők<i class="fas fa-caret-down"></i></a>
+                            <div class="dropdown">
+                                <ul>
+                                <li class="dropdown-link">
+                                    <a href="web.php?id=2" id="kosar">Kosárlabda cipők</a>
+                                </li>
+                                <li class="dropdown-link">
+                                    <a href="web.php?id=1" id="utcai">Utcai cipők</a>
+                                </li>
+                                <li class="dropdown-link">
+                                    <a href="web.php?id=3" id="papucs">Papucsok</a>
+                                </li>
+                                    <div class="arrow"></div>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-link" style="--i: 1.1s">
+                            <a href="#">Ruházat<i class="fas fa-caret-down"></i></a>
+                            <div class="dropdown">
+                                <ul>
+                                <li class="dropdown-link">
+                                    <a href="web.php?id=4" id="polo">Pólók</a>
+                                </li>
+                                <li class="dropdown-link">
+                                    <a href="web.php?id=5" id="pulover">Pulóverek</a>
+                                </li>
+                                <li class="dropdown-link">
+                                    <a href="web.php?id=6" id="nadrag">Nadrágok</a>
+                                </li>
+                                    <div class="arrow"></div>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-link" style="--i: .85s">
+                            <a href="#">Kiegészítők<i class="fas fa-caret-down"></i></a>
+                            <div class="dropdown">
+                                <ul>
+                                <li class="dropdown-link">
+                                    <a href="web.php?id=7" id="sapka">Sapkák</a>
+                                </li>
+                                <li class="dropdown-link">
+                                    <a href="web.php?id=8" id="taska">táskák</a>
+                                </li>
+                                <li class="dropdown-link">
+                                    <a href="web.php?id=9"  id="labda">labdák</a>
+                                </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 
-  <div class="dropdown nav-item">
-    <button class="btn btn-danger btn-lg dropdown-toggle" type="button" data-toggle="dropdown">Ruházat
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu bg-secondary">
-      <li>
-            <a href="web.php?id=4" id="polo" class="text-white">Pólók</a>
-        </li>
-        <li>
-            <a href="web.php?id=5" id="pulover" class="text-white">Pulóverek</a>
-        </li>
-        <li>
-            <a href="web.php?id=6" id="nadrag" class="text-white">Nadrágok</a>
-        </li>
-    </ul>
-</div>
-
-<div class="dropdown nav-item">
-    <button class="btn btn-danger btn-lg dropdown-toggle" type="button" data-toggle="dropdown">Kiegészítők
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu bg-secondary">
-    <li>
-            <a href="web.php?id=7" id="sapka" class="text-white">Sapkák</a>
-        </li>
-        <li>
-            <a href="web.php?id=8" id="taska" class="text-white">táskák</a>
-        </li>
-        <li>
-            <a href="web.php?id=9"  id="labda" class="text-white">labdák</a>
-        </li>
-    </ul>
-</div>
-
-</ul>
-
-
-    <button class="btn btn-success ml-auto mr-1"><img src="<?=$foto?>" alt="Avatar" width="30px" title="<?=$fnev?>"></button>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
-        <ul class="navbar-nav text-right">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">
+                <div class="log-sign" style="--i: 1.8s">
+                    <button class="btn transparent"><img src="<?=$foto?>" alt="Avatar" width="30px" title="<?=$fnev?>"></button>
                     <form method="post">    
-                    <input type="submit" class="btn btn-success btn-block" value="Kijelentkezés" name="logout">
+                        <input type="submit" class="btn transparent" value="Kijelentkezés" name="logout">
                     </form>
-                </a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Right Link 2</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+                    <a class="nav-link transparent" href="cart.php"><img src="images/cart.png" width="50px" height="50px"></a>
+                </div>
+            </div>
 
-</div>
+            <div class="hamburger-menu-container">
+                <div class="hamburger-menu">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    </div>
     <div class="container">
       <div id="background-image">
       </div>
     </div>
-
+</div>
 <?php
 //print_r ($_GET);
     if(isset($_GET['id'])){
@@ -134,7 +150,7 @@ if(isset($_POST['logout'])){
         include "home.php";
     }
 ?>
-</div>
+
 
 </body>
 </html>

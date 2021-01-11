@@ -30,11 +30,20 @@ if(isset($_POST['login'])){
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <script src="bootstrap/jquery.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container" id="container">
+<form class="box" method="post">
+  <h1>Login</h1>
+  <div class="text-danger"><?=$msg?></div>
+  <input type="text" name="name" placeholder="Username">
+  <input type="password" name="password" placeholder="Password">
+  <input type="submit" name="login" value="Login">
+    <a href="register.php">Regisztráció</a>
+</form>
+
+<!--<div class="container" id="container">
 	<div class="form-container sign-in-container">
         <form method="post">
             <h2 class="text-center">Bejelentkezés</h2>
@@ -53,7 +62,7 @@ if(isset($_POST['login'])){
 			</div>
 		</div>
 	</div>
-</div>
+</div>-->
 
 </body>
 </html>
