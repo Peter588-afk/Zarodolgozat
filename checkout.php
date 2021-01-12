@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once "config.php";
-print_r ($_SESSION);
+//print_r ($_SESSION);
 
 $sql="SELECT * from customers where id=?";
 $stmt=$db->prepare($sql);
@@ -100,7 +100,7 @@ if(isset($_POST['button'])){
                     </tr>
                 </tfoot>
             </table>
-            <a href="index.php">Continue shopping...</a>
+            <a href="web.php">Continue shopping...</a>
         </div>
         <div class="col-6">
             <form method="post">

@@ -1,18 +1,32 @@
-<div class="megjelen">
 
-<form method="post">
-  <div class="flexContainer p-3">
-      <h2 class="text-center">Termékek</h2>
-        <div class="shadow p-1 bg-light">
-          <div class="">
-             <div class="table-responsive">
-                  <div id="sor">
-                    <?=$strTable?>
-                  </div>
-            </div>
-          </div>
+<style>
+
+.flexContainer{
+    display: flex;
+    
+    border: 1px solid black;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.box{
+  width: 300px;
+  margin: 5px;
+  border: 2px solid black; 
+}
+.imagess{
+  width: 100%;
+}
+
+</style>
+<div class="flexContainer">
+  <div class="box ">
+    <form method="post">
+      <h2>Termékek</h2>
+        <div id="sorr">
+            <?=$strTable?>
         </div>
-  </form>
-
+    </form>
   </div>
+</div>
   

@@ -30,13 +30,13 @@ if(isset($_POST['logout'])){
     <script src="bootstrap/bootstrap.min.js"></script>
     <script src="bootstrap/popper.min.js"></script>
     <script src="webshop.js"></script>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style22.css">
 
     <style>
   /* Make the image fully responsive */
   .carousel-inner img {
-    width: 100%;
-    height: 100%;
+    width: 30%;
+    height: 60%;
   }
   ul.carousel-indicators{
         background: black;
