@@ -1,32 +1,26 @@
 
 <style>
-
 .flexContainer{
     display: flex;
-    
-    border: 1px solid black;
     flex-wrap: wrap;
-    flex-direction: row;
+    justify-content: center;
 }
-
 .box{
   width: 300px;
-  margin: 5px;
-  border: 2px solid black; 
+  margin:3px;
+  border: 1px solid gray;
+  
 }
 .imagess{
   width: 100%;
+  height: 100%
 }
-
 </style>
-<div class="flexContainer">
-  <div class="box ">
-    <form method="post">
+
+   <form method="post">
       <h2>Termékek</h2>
-        <div id="sorr">
+        <div class="flexContainer" id="sorr">
             <?=$strTable?>
-        </div>
+      </div>
     </form>
-  </div>
-</div>
   

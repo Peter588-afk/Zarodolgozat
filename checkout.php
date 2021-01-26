@@ -78,12 +78,28 @@ if(isset($_POST['button'])){
     <script src="bootstrap/bootstrap.min.js"></script>
     <title>Checkout</title>
 </head>
-<body>
+
+<style>
+      .links {
+    border: 0;
+    padding: 4px 8px;
+    background-color: rgb(134, 204, 102);
+    color: #fff;
+    font-family: font-bold;
+    font-size: 24px;
+    border-radius: 3px;
+}
+</style>
+
+<body style="background-color:gray;">
 
 <div class="container">
     <div class="row">
         <div class="col-6">
-            <table class="table table-bordered">
+            <table class="table table-striped table-hover  table-dark">
+            <hr>
+            <h2>Order Summary</h2>
+            <hr>
                 <thead>
                     <th>Item name</th>
                     <th>Quantity</th>
@@ -100,11 +116,14 @@ if(isset($_POST['button'])){
                     </tr>
                 </tfoot>
             </table>
-            <a href="web.php">Continue shopping...</a>
+            <a href="web.php" class='links'>Continue shopping...</a>
+            <a href="cart.php" class='links'>Back to cart</a>
         </div>
         <div class="col-6">
             <form method="post">
+                <hr>
                 <h2>Contact details</h2>
+                <hr>
                 <div class="form-group">
                     <input class="form-control" type="text" name="name" id="" disabled value="<?=$name?>" required>
                 </div>

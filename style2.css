@@ -9,6 +9,15 @@ body{
     overflow: hidden;
 }
 
+.links {
+    border: 0;
+    padding: 4px 8px;
+    background-color: rgb(134, 204, 102);
+    color: #fff;
+    font-family: font-bold;
+    font-size: 24px;
+    border-radius: 3px;
+}
 
 ul{
     list-style: none;
@@ -31,7 +40,7 @@ section{
     height: calc(100vh - 3rem);
     width: 100%;
     background: url('bg.jpg') no-repeat top center / cover;
-    /*overflow: hidden;*/
+    overflow: hidden;
 }
 
 .overlay{

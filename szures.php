@@ -18,8 +18,11 @@ if($nr>0){
 while($row=$stmt->fetch()){
   //print_r($row);
   //echo "<br>";
-  $strTable.="<div><img src='{$row['picture']}' class='imagess'><p class='price text-success'>{$row['price']}<br><button class='btn btn-success' name='gomb' value='{$row['id']}'><a href='cart.php?id={$row['id']}'>Kosárba</a></button></div>";
-  }
+  $strTable.="<div class='box'>
+  <img src='{$row['picture']}' class='imagess'>
+  <p class='price text-success'>{$row['price']}
+ <br> <a href='cart.php?id={$row['id']}' class='links'>Kosárba</a>
+</div>";  }
 }
 include "megjelenit.php";
 //include "kosarba.php";

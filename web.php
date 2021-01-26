@@ -18,6 +18,10 @@ if(isset($_POST['logout'])){
     $_SESSION['kulcs']="";
     header("Location:index.php");
 }
+$adminMenu='';
+if(isset($_SESSION['fnev']) && $_SESSION['fnev']=='admin'){
+    $adminMenu.="<li class='nav-link' style='--i: .85s'><a href='admin.php'>Admin<i class='fas fa-caret-down'></i></a></li>";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +34,7 @@ if(isset($_POST['logout'])){
     <script src="bootstrap/bootstrap.min.js"></script>
     <script src="bootstrap/popper.min.js"></script>
     <script src="webshop.js"></script>
-    <link rel="stylesheet" href="style22.css">
+    <link rel="stylesheet" href="style2.css">
 
     <style>
   /* Make the image fully responsive */
@@ -116,7 +120,12 @@ if(isset($_POST['logout'])){
                                 </ul>
                             </div>
                         </li>
+
+                        <?=$adminMenu?>
                     </ul>
+
+                    
+
                 </div>
 
                 <div class="log-sign" style="--i: 1.8s">

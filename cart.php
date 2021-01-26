@@ -64,12 +64,9 @@ if(isset($_SESSION['cart_contents'])){
     font-size: 24px;
     border-radius: 3px;
 }
-  
-  .links:hover {
-    background-color: #a44;
-  }
+
 </style>
-<body>
+<body style="background-color:gray;">
     <center>
     <div class="col-md-6">
     <h1>Shopping Cart</h1>

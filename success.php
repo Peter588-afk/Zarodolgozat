@@ -25,28 +25,54 @@ while($row=$stmt->fetch()){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <script src="bootstrap/jquery.min.js"></script>
+    <script src="bootstrap/bootstrap.min.js"></script>
     <title>Success</title>
 </head>
-<body>
-    <div>Reference id: <?=$id?></div>
-    <div>Total: <?=$total?></div>
-    <div>Placed on <?=$status?></div>
-    <div>Buyer name: <?=$name?></div>
-    <div>Email: <?=$email?></div>
-    <div>Phone: <?=$phone?></div>
+<style>
+      .links {
+    border: 0;
+    padding: 4px 8px;
+    background-color: rgb(134, 204, 102);
+    color: #fff;
+    font-family: font-bold;
+    font-size: 24px;
+    border-radius: 3px;
+}
+</style>
+<body style="background-color:gray;">
 
-    <table>
-        <thead>
-            <th>Name</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Sub Total</th>
-        </thead>
-        <tbody>
-            <?=$orderStr?>
-        </tbody>
-    </table>
-
-    <a class="" href="web.php">Vissza a fő oldalra</a>
+<div class="container">
+    <div class="row">
+        <div class="row col-12">
+            <div class='col-12'>
+            <center>
+            <div class="bg-dark"><h1 class="white">Rendelés Adatai</h1></div>
+                <div>Reference id: <?=$id?></div>
+                <div>Total: <?=$total?></div>
+                <div>Placed on <?=$status?></div>
+                <div>Buyer name: <?=$name?></div>
+                <div>Email: <?=$email?></div>
+                <div>Phone: <?=$phone?></div>
+            </div>
+            <div class='col-6'>
+                <table class="table table-striped table-hover  table-dark">
+                    <thead>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Sub Total</th>
+                    </thead>
+                    <tbody>
+                        <?=$orderStr?>
+                    </tbody>
+                </table>
+                <a class="links" href="web.php">Vissza a fő oldalra</a>
+            </div>
+            </center>
+        </div>
+    </div>
+</div>
 </body>
 </html>
