@@ -145,10 +145,7 @@ if(isset($_SESSION['fnev']) && $_SESSION['fnev']=='admin'){
         </div>
     </header>
     </div>
-    <div class="container">
-      <div id="background-image">
-      </div>
-    </div>
+    
 </div>
 <?php
 //print_r ($_GET);

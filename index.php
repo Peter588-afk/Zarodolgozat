@@ -31,6 +31,12 @@ if(isset($_POST['login'])){
     <script src="bootstrap/jquery.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .box{
+            width: 400px;
+        }
+    </style>
 </head>
 <body>
 

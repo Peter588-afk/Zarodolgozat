@@ -18,7 +18,6 @@
 </style>
 
    <form method="post">
-      <h2>Termékek</h2>
         <div class="flexContainer" id="sorr">
             <?=$strTable?>
       </div>

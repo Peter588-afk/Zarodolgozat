@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once "config.php";
-//print_r ($_SESSION);
+print_r ($_SESSION);
 
 $sql="SELECT * from customers where id=?";
 $stmt=$db->prepare($sql);
@@ -95,11 +95,13 @@ if(isset($_POST['button'])){
 
 <div class="container">
     <div class="row">
-        <div class="col-6">
+        <div class="col-12">
             <table class="table table-striped table-hover  table-dark">
+            <div class="bg-dark">
             <hr>
-            <h2>Order Summary</h2>
+            <h1 class="lead bg-dark text-center text-white">Order Summary</h1>
             <hr>
+            </div>
                 <thead>
                     <th>Item name</th>
                     <th>Quantity</th>
@@ -116,32 +118,40 @@ if(isset($_POST['button'])){
                     </tr>
                 </tfoot>
             </table>
-            <a href="web.php" class='links'>Continue shopping...</a>
-            <a href="cart.php" class='links'>Back to cart</a>
-        </div>
-        <div class="col-6">
-            <form method="post">
-                <hr>
-                <h2>Contact details</h2>
-                <hr>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="name" id="" disabled value="<?=$name?>" required>
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="email" id="" disabled value="<?=$email?>" required>
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="phone" id="" disabled value="<?=$phone?>" required>
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="address" id="" disabled value="<?=$address?>" required>
-                </div>
-                <div class="form-group">
-                    <input class="form-group btn btn-success btn-block" type="submit" name="button" id="" value="Place order" required>
-                </div>
-            </form>
+            <center>
+                <a href="web.php" class='links'>Continue shopping...</a>
+                <a href="cart.php" class='links'>Back to cart</a>
+            </center>
         </div>
     </div>
+    
+        <div class="row">
+            <div class="col-12">
+                <form method="post">
+                <div class="bg-dark">
+                    <hr>
+                    <h1 class="lead bg-dark text-center text-white">Contact details</h1>
+                    <hr>
+                </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="name" id="" disabled value="<?=$_SESSION['fnev']?>" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="email" id="" disabled value="<?=$email?>" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="phone" id="" disabled value="<?=$phone?>" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="address" id="" disabled value="<?=$address?>" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-group btn btn-success btn-block links" type="submit" name="button" id="" value="Place order" required>
+                    </div>
+                </form>
+            </div>
+        </div>
 </div>
+
 </body>
 </html>

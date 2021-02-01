@@ -48,15 +48,15 @@ while($row=$stmt->fetch()){
         <div class="row col-12">
             <div class='col-12'>
             <center>
-            <div class="bg-dark"><h1 class="white">Rendelés Adatai</h1></div>
+            <div class="bg-dark"><h1 class="lead bg-dark text-center text-white">Rendelés Adatai</h1></div>
                 <div>Reference id: <?=$id?></div>
                 <div>Total: <?=$total?></div>
                 <div>Placed on <?=$status?></div>
-                <div>Buyer name: <?=$name?></div>
+                <div>Buyer name: <?=$_SESSION['fnev']?></div>
                 <div>Email: <?=$email?></div>
                 <div>Phone: <?=$phone?></div>
             </div>
-            <div class='col-6'>
+            <div class='col-12'>
                 <table class="table table-striped table-hover  table-dark">
                     <thead>
                         <th>Name</th>
@@ -68,7 +68,8 @@ while($row=$stmt->fetch()){
                         <?=$orderStr?>
                     </tbody>
                 </table>
-                <a class="links" href="web.php">Vissza a fő oldalra</a>
+                
+                <center><a class="links" href="web.php">Vissza a fő oldalra</a></center>
             </div>
             </center>
         </div>

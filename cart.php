@@ -5,7 +5,7 @@ include "cart.class.php";
 
 $cart=new Cart();
 $sum=0;
-$strCart=0;
+$strCart="";
 //print_r($_GET);
 if(isset($_GET['id'])){
     $query=$db->query("SELECT * from products where id={$_GET['id']}");
@@ -69,29 +69,29 @@ if(isset($_SESSION['cart_contents'])){
 <body style="background-color:gray;">
     <center>
     <div class="col-md-6">
-    <h1>Shopping Cart</h1>
-    <table class="table table-striped table-hover  table-dark">
-    <thead>
-        <th>Item name</th>
-        <th>Quantity</th>
-        <th>Price</th>
-        <th>Total</th>
-        <th>Action</th>
-    </thead>
-        <tbody id="table">
-            <?=$strCart?>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan=3>Total</td>
-                <td><?=$sum?></td>
-            </tr>
-        </tfoot>
-    </table>
-    <a href="web.php" class='links'>Continue shopping...</a>
-    <a href="checkout.php" class='links'>Checkout</a>
+        <h1>Shopping Cart</h1>
+        <table class="table table-striped table-hover  table-dark">
+        <thead>
+            <th>Item name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+            <th>Action</th>
+        </thead>
+            <tbody id="table">
+                <?=$strCart?>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan=3>Total</td>
+                    <td><?=$sum?></td>
+                </tr>
+            </tfoot>
+        </table>
+        <a href="web.php" class='links'>Continue shopping...</a>
+        <a href="checkout.php" class='links'>Checkout</a>
+    </div>
+    </center>
 
-</div>
-</center>
 </body>
 </html>

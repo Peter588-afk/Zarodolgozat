@@ -54,6 +54,12 @@ if(isset($_POST['mentes'])){
     <link rel="stylesheet" href="style.css">
     <script src="ellenor2.js"></script>
 </head>
+
+<style>
+        .box{
+            width: 400px;
+        }
+    </style>
 <body>
 
 <form method="post" class="box">
