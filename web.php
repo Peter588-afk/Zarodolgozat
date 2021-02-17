@@ -38,6 +38,10 @@ if(isset($_SESSION['fnev']) && $_SESSION['fnev']=='admin'){
 
     <style>
   /* Make the image fully responsive */
+  body{
+      overflow: visible;
+      overflow-x: hidden;
+  }
   .carousel-inner img {
     width: 30%;
     height: 60%;

@@ -47,3 +47,160 @@ while($row=$stmt->fetch()){
 </a>
 </div>
 </center>
+
+<div class="row">
+
+<div class="col-lg-4 col-md-6 mb-4">
+  <div class="card h-100">
+    <a href="#"><img class="card-img-top" src="images/1.jpg" alt=""></a>
+    <div class="card-body">
+      <h4 class="card-title">
+        <a href="web.php?id=1">Utcai cipők</a>
+      </h4>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+    </div>
+  </div>
+</div>
+
+<div class="col-lg-4 col-md-6 mb-4">
+  <div class="card h-100">
+    <a href="#"><img class="card-img-top" src="images/2.jpg" alt=""></a>
+    <div class="card-body">
+      <h4 class="card-title">
+        <a href="web.php?id=2">Kosárlabda cipők</a>
+      </h4>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+    </div>
+  </div>
+</div>
+
+<div class="col-lg-4 col-md-6 mb-4">
+  <div class="card h-100">
+    <a href="#"><img class="card-img-top" src="images/3.jpg" alt=""></a>
+    <div class="card-body">
+      <h4 class="card-title">
+        <a href="web.php?id=3">Papucsok</a>
+      </h4>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+    </div>
+  </div>
+</div>
+
+<div class="col-lg-4 col-md-6 mb-4">
+  <div class="card h-100">
+    <a href="#"><img class="card-img-top" src="images/4.jpg" alt=""></a>
+    <div class="card-body">
+      <h4 class="card-title">
+        <a href="web.php?id=4">Polok</a>
+      </h4>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+    </div>
+  </div>
+</div>
+
+<div class="col-lg-4 col-md-6 mb-4">
+  <div class="card h-100">
+    <a href="#"><img class="card-img-top" src="images/5.jpg" alt=""></a>
+    <div class="card-body">
+      <h4 class="card-title">
+        <a href="web.php?id=5">Pulóverek</a>
+      </h4>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+    </div>
+  </div>
+</div>
+
+<div class="col-lg-4 col-md-6 mb-4">
+  <div class="card h-100">
+    <a href="#"><img class="card-img-top" src="images/6.jpg" alt=""></a>
+    <div class="card-body">
+      <h4 class="card-title">
+        <a href="web.php?id=6">Nadrágok</a>
+      </h4>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+    </div>
+  </div>
+</div>
+
+<div class="col-lg-4 col-md-6 mb-4">
+  <div class="card h-100">
+    <a href="#"><img class="card-img-top" src="images/7.jpg" alt=""></a>
+    <div class="card-body">
+      <h4 class="card-title">
+        <a href="web.php?id=7">Sapkák</a>
+      </h4>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+    </div>
+  </div>
+</div>
+
+<div class="col-lg-4 col-md-6 mb-4">
+  <div class="card h-100">
+    <a href="#"><img class="card-img-top" src="images/1.jpg" alt=""></a>
+    <div class="card-body">
+      <h4 class="card-title">
+        <a href="web.php?id=8">Táskák</a>
+      </h4>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+    </div>
+  </div>
+</div>
+
+<div class="col-lg-4 col-md-6 mb-4">
+  <div class="card h-100">
+    <a href="#"><img class="card-img-top" src="images/1.jpg" alt=""></a>
+    <div class="card-body">
+      <h4 class="card-title">
+        <a href="web.php?id=9">Labdák</a>
+      </h4>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+    </div>
+  </div>
+</div>
+
+</div>
+<!-- /.row -->
+
+</div>
+<!-- /.col-lg-9 -->
+
+</div>
+<!-- /.row -->
+
+</div>
+<!-- /.container -->
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+<div class="container">
+<p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+</div>
+<!-- /.container -->
+</footer>

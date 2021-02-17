@@ -15,6 +15,10 @@
   width: 100%;
   height: 100%
 }
+.proba-img{
+  width: 80%;
+  text-align: center;
+}
 </style>
 
    <form method="post">
