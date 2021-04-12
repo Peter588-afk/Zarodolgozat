@@ -30,7 +30,7 @@ if(isset($_POST['login'])){
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <script src="bootstrap/jquery.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <style>
         .box{
@@ -48,27 +48,6 @@ if(isset($_POST['login'])){
   <input type="submit" name="login" value="Login">
     <a href="register.php">Regisztráció</a>
 </form>
-
-<!--<div class="container" id="container">
-	<div class="form-container sign-in-container">
-        <form method="post">
-            <h2 class="text-center">Bejelentkezés</h2>
-            <div class="text-danger"><?=$msg?></div>
-			<input type="text" name="name" placeholder="Felhasználónév" required>
-			<input type="password" name="password" placeholder="Jelszó" required>
-			<input type="submit" name="login" value="Bejelentkezés">
-		
-	</div>
-	<div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-right">
-				<h1>Szia!</h1>
-                <p>Új vagy itt? Ha igen akkor regisztrálj itt!</p>
-				<button class="ghost" id="signUp"><a href="register.php">Regisztráció</a></button>
-			</div>
-		</div>
-	</div>
-</div>-->
 
 </body>
 </html>

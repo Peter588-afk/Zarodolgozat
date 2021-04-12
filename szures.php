@@ -1,3 +1,11 @@
+<style>
+.disable {
+   pointer-events: none;
+   cursor: default;
+   background-color: gray;
+}
+</style>
+
 <?php
 require_once "config.php";
 include "product.class.php";
@@ -18,20 +26,27 @@ if($nr>0){
 while($row=$stmt->fetch()){
   //print_r($row);
   //echo "<br>";
+  if($row["db"]==0){
+    $nincs="disable";
+    $szoveg="Nincs Raktáron";
+  }else{
+    $nincs="";
+    $szoveg="";
+  }  
   $strTable.="<div class='col-lg-3 col-md-4 mb-4'>
   <div class='card h-100 justify-content-center text-center'>
     <a href='#'><img class='card-img-top img-thumbnail img-fluid proba-img' src='{$row['picture']}' alt=''></a>
     <div class='card-body'>
-      <h4 class='card-title'>
-        <a href='#'>'{$row['name']}'</a>
-      </h4>
-      <h5>{$row['price']}<span class='font-weight-bold'> Ft</span></h5>
     </div>
     <div class='card-footer'>
-    <a href='cart.php?id={$row['id']}' class='links'>Kosárba</a>
+    <h4 class='card-title'>{$row['name']}</h4>
+      <h5>{$row['price']}<span class='font-weight-bold'> Ft</span></h5>
+      <a href='cart/cart.php?id={$row['id']}' class='links {$nincs} '>Kosárba</a>
+      <p class='text-danger'>{$szoveg}</p>
     </div>
   </div>
-</div>";   }
+</div>
+";   }
 }
 include "megjelenit.php";
 //include "kosarba.php";

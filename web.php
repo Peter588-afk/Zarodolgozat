@@ -20,7 +20,7 @@ if(isset($_POST['logout'])){
 }
 $adminMenu='';
 if(isset($_SESSION['fnev']) && $_SESSION['fnev']=='admin'){
-    $adminMenu.="<li class='nav-link' style='--i: .85s'><a href='admin.php'>Admin<i class='fas fa-caret-down'></i></a></li>";
+    $adminMenu.="<li class='nav-link' style='--i: .85s'><a href='admin/admin.php'>Admin<i class='fas fa-caret-down'></i></a></li>";
 }
 ?>
 <!DOCTYPE html>
@@ -34,7 +34,7 @@ if(isset($_SESSION['fnev']) && $_SESSION['fnev']=='admin'){
     <script src="bootstrap/bootstrap.min.js"></script>
     <script src="bootstrap/popper.min.js"></script>
     <script src="webshop.js"></script>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="css/style2.css">
 
     <style>
   /* Make the image fully responsive */
@@ -50,7 +50,7 @@ if(isset($_SESSION['fnev']) && $_SESSION['fnev']=='admin'){
         background: black;
   }
     ul.carousel-indicators li.active {
-        background: yellow;
+        background: gray;
   }
   .carousel-control-prev {
     background: black;
@@ -137,7 +137,7 @@ if(isset($_SESSION['fnev']) && $_SESSION['fnev']=='admin'){
                     <form method="post">    
                         <input type="submit" class="btn transparent" value="Kijelentkezés" name="logout">
                     </form>
-                    <a class="nav-link transparent" href="cart.php"><img src="images/cart.png" width="50px" height="50px"></a>
+                    <a class="nav-link transparent" href="cart/cart.php"><img src="images/cart.png" width="50px" height="50px"></a>
                 </div>
             </div>
 
@@ -152,9 +152,7 @@ if(isset($_SESSION['fnev']) && $_SESSION['fnev']=='admin'){
     
 </div>
 <?php
-//print_r ($_GET);
     if(isset($_GET['id'])){
-        //include $_GET['id'];
         include "szures.php";
     }else{
         include "home.php";
