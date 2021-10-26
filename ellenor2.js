@@ -11,7 +11,7 @@ function ellenorzes(e){
     let jelszo2=document.getElementById('pw2').value
     if(jelszo1 != jelszo2){
         e.preventDefault();
-        document.getElementById('msg').innerHTML="Nem egyezik a két jelsz"
+        document.getElementById('msg').innerHTML="Nem egyezik a két jelszó"
     }
 }
 
